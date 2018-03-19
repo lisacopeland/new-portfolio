@@ -53,9 +53,20 @@
         <h2>About</h2>
       </div>
       <div class="content-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+        <p>I am a software developer in Redmond, Washington. I originally moved here to work at Microsoft
+          after developing software in the Los Angeles Area. I then took a break to run a successful small 
+          business as a horse trainer. I decided I wanted to get back to programming so in 2016 I started 
+          taking online certification classes to renew my skills. I really enjoyed writing applications 
+          software when I was a programmer in LA so web development was what I gravitated towards. My goal 
+          is to further my career as a full stack web developer.</p>
+
+        <p>Like most developers, I have volunteered my services - I helped improve and maintain the 
+          website for The WallingFord Senior Center, an organization that improves the lives of the 
+          elderly in the Seattle area. I am a physically active person and strive for achievement in 
+          everything I do! I am a dressage rider (a form of horseback riding that strengthens and improves
+          the horse) who has ridden to the Olympic level, and I have qualified for and run the Boston  
+          Marathon. </p>
+      <div>
     </div>
     <div class="side-content"></div>
   </div>
@@ -189,9 +200,14 @@
             <img src="http://placehold.it/250x350">
           </div>
           <div class="project-content">
-            <h4>Project Name</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#">Link Text</a>
+            <h4>Awesome Flashcards</h4>
+            <p>This is a full stack application featuring an Angular 4 frontend, a backend using NodeJs, 
+              Express, and Mongoose, and MongoDB as the database. The UI uses flex layout for the CSS and is
+              built with Webpack. It is deployed on the Google Cloud Platform. The database is hosted on MLab. 
+              The code is in a repository on github at https://github.com/TheWonderWomenUnite/flashcards. The 
+              concept, architecture, and UI design are all my own original work. The database and backend 
+              implementation. I cowrote the frontend with a partner as a project for Seattle Launch Code.</p>
+            <a href="https://calcium-doodad-185815.appspot.com">Awesome Flashcards</a>
           </div>
         </div>
         <!-- CARD #2 -->
@@ -200,9 +216,12 @@
             <img src="http://placehold.it/250x350">
           </div>
           <div class="project-content">
-            <h4>Project Name</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#">Link Text</a>
+            <h4>Recipe Book</h4>
+            <p>This is a Web application which was implemented as a class project for "Angular (2+) 
+              The Complete Guide." It features an Angular 4 frontend which uses bootstrap for 
+              styling, a custom authorization system, and firebase for persistent storage. It also utilizes
+              webpack and is deployed to Amazon AWS. The code is in a repository on my github account.</p>
+            <a href="http://lisa-copeland-recipebook.s3-website-us-west-2.amazonaws.com/">Recipe Book</a>
           </div>
         </div>
         <!-- CARD #3 -->
@@ -225,7 +244,7 @@
 
   <!-- BEGIN SKILLS -->
   <div class="row white box-shadow">
-    <div class="side-content"></div>
+      <div class="side-content"></div>
     <div class="main-content">
       <div class="content-header">
         <a class="anchor" name="skills"></a>
@@ -240,6 +259,7 @@
           <li class="li-skills">HTML</li>
           <li class="li-skills">CSS</li>
           <li class="li-skills">Node.js</li>
+          <li class="li-skills">RxJS</li>
           <li class="li-skills">Bootstrap</li>
           <li class="li-skills">Webpack</li>
           <li class="li-skills">jQuery</li>
@@ -247,8 +267,9 @@
           <li class="li-skills">Amazon AWS</li>
         </ul>
       </div>
+      <div class="side-content"></div>
     </div>
-    <div class="side-content"></div>
+
   </div>
   <!-- END SKILLS -->
 
@@ -257,21 +278,26 @@
   <div class="row blue">
     <div class="side-content"></div>
     <div class="main-content">
+
       <div class="content-header">
         <a class="anchor" name="contact"></a>
         <h2 class="white-text">Contact Me</h2>
       </div>
+
       <div class="contact content-body">
-        <form method="POST" action="https://formspree.io/email@email.com">
-            <input type="hidden" name="_subject" value="Contact request from personal website" />
-            <input type="email" name="_replyto" placeholder="Your email" required>
-            <textarea name="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSend()">
+
+            <input type="email" name="email" formControlName="email" placeholder="Your email">
+            <textarea name="message" formControlName="message" placeholder="Your message"></textarea>
+            <button type="submit" [disabled]="!contactForm.valid">Send</button>
         </form>
-      </div>
-    </div>
+
+      </div> <!-- contact content-body -->
+
+    </div> <!-- main content --> 
     <div class="side-content"></div>
-  </div>
+  </div> <!-- row blue -->
   <!-- END CONTACT -->
 
   <!-- BEGIN FOOTER -->
@@ -288,4 +314,4 @@
   </div>
   <!-- END FOOTER -->
 
-</div>
+</div>  <!-- end container -->
