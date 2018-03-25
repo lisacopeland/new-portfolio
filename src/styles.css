@@ -26,6 +26,10 @@ body {
     text-decoration: none;
   }
   
+  .navbar a:hover {
+    color: black;
+  }
+
   .anchor {
     display: block;
     position: relative;
@@ -43,6 +47,19 @@ body {
     flex-direction: column;
   }
   
+  .jumbotron .lisa-pic {
+    position: absolute;
+    border-radius: 50%;
+    top: 40px;
+    left: 10px;
+  }
+
+  .jumbotron .shield-pics {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+  }
+
   .jumbotron-text {
     /*TAGLINE UNDER NAME*/
     font-weight: 400;
@@ -50,6 +67,7 @@ body {
     color: white;
     text-align: center;
     padding-top: 150px;
+    padding-bottom: 75px;
   }
   
   .jumbotron-text h1 {
@@ -65,6 +83,11 @@ body {
   }
   
   /*SOCIAL LINKS*/
+
+  .jumbotron-social {
+    align-self: center; 
+  }
+
   .ul-social {
     text-align: center;
     padding-left: 0;
@@ -225,7 +248,8 @@ body {
     background: #31b0d5;
     list-style: none;
     cursor: default;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    border-radius: 25px;
   }
   
   /*CONTACT*/

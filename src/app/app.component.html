@@ -14,10 +14,15 @@
 
   <!-- HEADER -->
   <div class="jumbotron">
+    <img class="lisa-pic" [src]="lisaPicture" height=175 width=175>
     <div class="jumbotron-text">
       <h1>Lisa Copeland</h1>
       <p>MEAN Stack Web Developer in Redmond, WA</p>
     </div>
+    <div class="shield-pics">
+      <img [src]="iconPic" height=145 width=500>
+
+    </div>    
     <div class="jumbotron-social">
       <ul class="ul-social">
         <li class="li-social-links">
@@ -197,7 +202,7 @@
         <!-- CARD #1 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="http://placehold.it/250x350">
+            <img [src]="flashCardImage" height=172 width=250>
           </div>
           <div class="project-content">
             <h4>Awesome Flashcards</h4>
@@ -230,8 +235,8 @@
             <img src="http://placehold.it/250x350">
           </div>
           <div class="project-content">
-            <h4>Project Name</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h4>Coming Soon</h4>
+            <p>Soon to be added.</p>
             <a href="#">Link Text</a>
           </div>
         </div>
@@ -285,9 +290,9 @@
       </div>
 
       <div class="contact content-body">
-
+        <p>Feel free to contact me at <a href="tel:+1-206-619-3815">206-619-3815</a>, send me an email
+           at lisacope@msn.com, or use the form below.</p>
         <form [formGroup]="contactForm" (ngSubmit)="onSend()">
-
             <input type="email" name="email" formControlName="email" placeholder="Your email">
             <textarea name="message" formControlName="message" placeholder="Your message"></textarea>
             <button type="submit" [disabled]="!contactForm.valid">Send</button>
