@@ -10,14 +10,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  // logoPic = '/assets/checkmatelogo.png';
+
   flashCardImage = '/assets/flashcardscreen.jpg';
+  recipeBookImage = '/assets/recipebookscreenjpg';
+  tictactoeImage = './assets/tictactoe.jpg';
   lisaPicture = '/assets/lisaphoto1.jpg';
   iconPic = '/assets/Combined 2 Lines_PNG.png';
-  iconPic2 = '/assets/Combined One Line_PNG.png';
-  mongopic = '/assets/mongo-pic.png';
-  googlepic = '/assets/googlecloud-pic.png';
+
   contactForm: FormGroup;
 
   constructor(private db: AngularFireDatabaseModule) {}
